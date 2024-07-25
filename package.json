@@ -4,12 +4,13 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start:dev": "concurrently \"npm run server\" \"npm run client\"",
     "start": "npm run build && npm run server",
+    "start:dev": "concurrently \"npm run server:dev\" \"npm run client\"",
     "build": "npm run build --prefix client",
     "install": "npm install --prefix client && npm install --prefix server",
     "client": "npm run start --prefix client",
-    "server": "node_modules/.bin/nodemon server/server.js"
+    "server": "npx nodemon server/server.js --ignore client",  
+    "server:dev": "npx nodemon server/server.js --ignore client"  
   },
   "keywords": [],
   "author": "",
@@ -25,4 +26,3 @@
     "style-loader": "^3.3.4"
   }
 }
-
