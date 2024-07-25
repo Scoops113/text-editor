@@ -9,7 +9,7 @@
     "build": "npm run build --prefix client",
     "install": "npm install --prefix client && npm install --prefix server",
     "client": "npm run start --prefix client",
-    "server": "nodemon server/server.js"
+    "server": "node_modules/.bin/nodemon server/server.js"
   },
   "keywords": [],
   "author": "",
