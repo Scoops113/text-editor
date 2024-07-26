@@ -12,11 +12,11 @@ module.exports = () => {
     },
     output: {
       filename: '[name].bundle.js',
-      path: path.resolve(__dirname, 'client/dist'),
+      path: path.resolve(__dirname, 'dist'),
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: path.resolve(__dirname, 'client/index.html'),
+        template: path.resolve(__dirname, 'src/index.html'),
         filename: 'index.html',
       }),
       new WebpackPwaManifest({
