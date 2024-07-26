@@ -16,7 +16,7 @@ module.exports = () => {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: path.resolve(__dirname, 'index.html'),
+        template: path.resolve(__dirname, 'src/index.html'),
         filename: 'index.html',
       }),
       new WebpackPwaManifest({
@@ -46,6 +46,10 @@ module.exports = () => {
         {
           test: /\.css$/i,
           use: ['style-loader', 'css-loader'],
+        },
+        {
+          test: /\.(png|svg|jpg|jpeg|gif)$/i,
+          type: 'asset/resource',
         },
         {
           test: /\.js$/,
